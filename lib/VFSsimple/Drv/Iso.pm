@@ -8,7 +8,7 @@ use File::Temp qw(tempfile);
 use POSIX;
 use base qw(VFSsimple::Base);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 

@@ -10,7 +10,10 @@ WriteMakefile(
     NAME	 => "VFSsimple::Drv::$modulename",
     AUTHOR   => 'Olivier Thauvin <nanardon@nanardon.zarb.org>',
     VERSION_FROM => "lib/VFSsimple/Drv/$modulename.pm",
-    PREREQ_PM => { 'Device::Cdio::ISO9660' => undef }
+    PREREQ_PM => {
+        'Device::Cdio::ISO9660' => undef,
+        'VFSsimple::Base' => undef,
+    },
 );
 
 package MY;
