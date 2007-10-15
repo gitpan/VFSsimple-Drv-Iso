@@ -8,7 +8,7 @@ use File::Temp qw(tempfile);
 use POSIX;
 use base qw(VFSsimple::Base);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 NAME
 
@@ -54,6 +54,12 @@ sub drv_copy {
     }
     close($fh);
     return $dest;
+}
+
+sub drv_stat {
+    my ($self, $file) = @_;
+    my $iso = $self->{iso};
+    return(defined($iso->stat("$self->{prefix}/$file", 0)));
 }
 
 1;
